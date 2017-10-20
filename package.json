@@ -1,0 +1,18 @@
+{
+  "name": "evaluation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd client && npm run build && cd .. && node index.js",
+    "dev": "nodemon index.js & cd client && npm start; wait",
+    "postinstall": "cd client && yarn"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "serve-static": "^1.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
