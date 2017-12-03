@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Dialog, { DialogTitle, DialogActions, DialogContent } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-
 
 const styles = {
   paragraph: {
@@ -11,7 +10,7 @@ const styles = {
   }
 };
 
-const ConsentForm = ({ onAgree, open, classes }) => {
+const ConsentForm = ({ onAgree, onDisagree, open, classes }) => {
   return (
     <Dialog open={open}>
       <DialogTitle>
@@ -39,9 +38,7 @@ const ConsentForm = ({ onAgree, open, classes }) => {
         <Typography component="p" className={classes.paragraph}>
           The procedure involves filling an online survey that will take approximately 30 minutes.
           Your responses will be confidential and we do not collect identifying information,
-          such as your name or email address. The survey questions will be about whether the short phrases
-          provided denote relevant concepts within your field of study.
-          We will keep your information confidential.
+          such as your name or email address. The survey requires you to evaluate whether automatically extracted short phrases consisting of 1-4 words (such as ‘function’, ‘in the worst case’, ‘get a phd’, ‘turing complete’, ‘https arxiv org’) denote relevant concepts within your field of study (i.e. if they are topics in the formal curriculum, or common research topics, or seminal concepts etc. within your field of study).
         </Typography>
 
         <Typography component="p" className={classes.paragraph}>
@@ -58,6 +55,9 @@ const ConsentForm = ({ onAgree, open, classes }) => {
       </DialogContent>
 
       <DialogActions>
+        <Button dense color="primary" onClick={onDisagree}>
+          Disagree
+        </Button>
         <Button dense color="primary" onClick={onAgree}>
           Agree
         </Button>

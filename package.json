@@ -9,7 +9,11 @@
     "postinstall": "cd client && yarn"
   },
   "dependencies": {
+    "array-shuffle": "^1.0.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "mongodb": "^2.2.33",
     "serve-static": "^1.13.1"
   },
   "devDependencies": {
