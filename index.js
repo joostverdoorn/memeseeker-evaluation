@@ -33,5 +33,9 @@ MongoClient.connect(MONGODB_URI).then(db => {
 
   server.use(serveStatic('client/build'));
 
+  server.use('*', (request, response) => {
+    response.sendFile(`${__dirname}/client/build/index.html`);
+  });
+
   server.listen(PORT, () => console.log(`started on port ${PORT}`));
 });

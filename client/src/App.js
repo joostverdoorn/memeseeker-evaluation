@@ -54,8 +54,8 @@ class App extends Component {
                   <Route path="/:field/:step" render={props => {
                     const { history, match: { params: { step, field } } } = props;
                     const stepNumber = Number(step);
-                    const onNext = () => history.push(`/field/${field}/${stepNumber + 1}`);
-                    const onPrev = () => history.push(`/field/${field}/${stepNumber - 1}`);
+                    const onNext = () => history.push(`/${field}/${stepNumber + 1}`);
+                    const onPrev = () => history.push(`/${field}/${stepNumber - 1}`);
                     return <Task {...props} step={stepNumber} field={field} onPrev={onPrev} onNext={onNext} />
                   }} />
                 </Switch>
