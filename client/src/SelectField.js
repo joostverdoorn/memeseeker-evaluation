@@ -28,11 +28,11 @@ const SelectField = ({ onAgree, onDisagree, open, classes }) => {
         </Typography>
 
         <MenuList>
-          <Link to="/field/aerospace" className={classes.link}><MenuItem>Aerospace Engineering</MenuItem></Link>
-          <Link to="/field/compsci" className={classes.link}><MenuItem>Computer Science</MenuItem></Link>
-          <Link to="/field/datascience" className={classes.link}><MenuItem>Data Science</MenuItem></Link>
-          <Link to="/field/medicine" className={classes.link}><MenuItem>Medicine</MenuItem></Link>
-          <Link to="/field/psychology" className={classes.link}><MenuItem>Psychology</MenuItem></Link>
+          <Link to="/aerospace" className={classes.link}><MenuItem>Aerospace Engineering</MenuItem></Link>
+          <Link to="/compsci" className={classes.link}><MenuItem>Computer Science</MenuItem></Link>
+          <Link to="/datascience" className={classes.link}><MenuItem>Data Science</MenuItem></Link>
+          <Link to="/medicine" className={classes.link}><MenuItem>Medicine</MenuItem></Link>
+          <Link to="/psychology" className={classes.link}><MenuItem>Psychology</MenuItem></Link>
         </MenuList>
       </CardContent>
     </Card>

@@ -33,37 +33,25 @@ class App extends Component {
       <div>
         {consent == null ?
           <ConsentForm open={true} onAgree={() => this.setState({ consent: true })} onDisagree={() => this.setState({ consent: false })} />  :
-
+        consent === false ?
+          <Bye /> :
           (<div className={classes.container}>
-            <Route exact path="/" render={() => {
-              return consent === true ?
-                <Redirect to="/field" /> :
-              consent === false ?
-                <Redirect to="/bye" />  : null
-            }} />
-
             <Grid container justify={'center'}>
               <Grid item xs={12} sm={8} lg={4}>
                 <Switch>
-                  <Route exact path="/field">
+                  <Route exact path="/thanks" render={props => <Thanks /> } />
+
+                  <Route exact path="/">
                     <SelectField onSelect={() => {}} />
                   </Route>
 
-                  <Route exact path="/field/:field/" render={props => {
+                  <Route exact path="/:field/" render={props => {
                     const { history, match: { params: { field } } } = props;
-                    const onNext = () => history.push(`/field/${field}/0`);
+                    const onNext = () => history.push(`/${field}/0`);
                     return <Help onNext={onNext} field={field} />;
                   }} />
 
-                  <Route exact path="/thanks" render={props => {
-                    return <Thanks />;
-                  }} />
-
-                  <Route exact path="/bye" render={props => {
-                    return <Bye />;
-                  }} />
-
-                  <Route path="/field/:field/:step" render={props => {
+                  <Route path="/:field/:step" render={props => {
                     const { history, match: { params: { step, field } } } = props;
                     const stepNumber = Number(step);
                     const onNext = () => history.push(`/field/${field}/${stepNumber + 1}`);
@@ -74,11 +62,7 @@ class App extends Component {
               </Grid>
             </Grid>
           </div>)
-
         }
-
-
-
       </div>
     );
   }
