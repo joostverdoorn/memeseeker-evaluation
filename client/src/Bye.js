@@ -5,23 +5,19 @@ import Typography from 'material-ui/Typography';
 
 const styles = {};
 
-const Thanks = ({ classes }) => {
+const Bye = ({ classes }) => {
   return (
     <Dialog open={true}>
       <DialogTitle>
-        Thank you very much!
+        Thank you for you interest!
       </DialogTitle>
 
       <DialogContent>
         <Typography type="body1" paragraph>
-          Your contribution is very valuable.
-        </Typography>
-
-        <Typography type="body1" paragraph>
           The goal of this research is to develop a method for extracting <em>memes</em> — replicating patterns of behavior — from online correspondence.
           In our case, we analyze textual patterns, consisting of 1 through 4 words, extracted from science-oriented communities on the online platform Reddit.
           We find these memes by looking at what patterns of text a person was exposed to (i.e. what they read) and comparing these patterns with the patterns of text a person expresses (i.e. what they write).
-          The 100 phrases you just analyzed came out as the most meme-like patterns, and we expect that these memes correspond to important concepts within your field.
+          We expect that these memes correspond to important concepts within your field.
         </Typography>
 
         <Typography type="body1" paragraph>
@@ -32,4 +28,4 @@ const Thanks = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Thanks);
+export default withStyles(styles)(Bye);

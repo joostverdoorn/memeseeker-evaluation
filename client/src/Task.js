@@ -54,7 +54,7 @@ class Task extends Component {
       body: JSON.stringify(this.state.relevancies)
     });
 
-
+    this.props.history.push('/thanks');
   };
 
   handleChange = (event, relevancy) => {
@@ -90,7 +90,7 @@ class Task extends Component {
                 value={relevancy}
                 onChange={this.handleChange}
               >
-                <FormControlLabel value="0" control={<Radio />} className={classes.label} label="Not relevant" />
+                <FormControlLabel value="0" control={<Radio />} className={classes.label} label="Irrelevant" />
                 <FormControlLabel value="1" control={<Radio />} className={classes.label} label="Marginally relevant" />
                 <FormControlLabel value="2" control={<Radio />} className={classes.label} label="Relevant" />
                 <FormControlLabel value="3" control={<Radio />} className={classes.label} label="Highly relevant" />
