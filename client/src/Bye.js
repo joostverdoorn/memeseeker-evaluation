@@ -9,7 +9,7 @@ const Bye = ({ classes }) => {
   return (
     <Dialog open={true}>
       <DialogTitle>
-        Thank you for you interest!
+        Thank you for your interest!
       </DialogTitle>
 
       <DialogContent>
