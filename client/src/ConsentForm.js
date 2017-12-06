@@ -23,7 +23,7 @@ const ConsentForm = ({ onAgree, onDisagree, open, classes }) => {
           discussion platforms, in this case science‐oriented discussions on the platform Reddit. This
           evaluation is being conducted by Joost Verdoorn, MSc student at the TU Delft. You are invited to
           participate in this evaluation because you have at least a Master’s or comparable level within the
-          fields of Aerospace Engineering, Computer Science, Data Science, Medicine, Philosophy or
+          fields of Aerospace Engineering, Computer Science, Data Science, Medicine, or
           Psychology.
         </Typography>
 
@@ -36,7 +36,7 @@ const ConsentForm = ({ onAgree, onDisagree, open, classes }) => {
         </Typography>
 
         <Typography component="p" className={classes.paragraph}>
-          The procedure involves filling an online survey that will take approximately 30 minutes.
+          The procedure involves filling an online survey that will take approximately 15 minutes.
           Your responses will be confidential and we do not collect identifying information,
           such as your name or email address. The survey requires you to evaluate whether automatically extracted short phrases consisting of 1-4 words (such as ‘function’, ‘in the worst case’, ‘get a phd’, ‘turing complete’, ‘https arxiv org’) denote relevant concepts within your field of study (i.e. if they are topics in the formal curriculum, or common research topics, or seminal concepts etc. within your field of study).
         </Typography>

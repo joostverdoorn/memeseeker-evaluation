@@ -8,14 +8,7 @@ import KeyboardArrowRight from 'material-ui-icons/KeyboardArrowRight';
 import HelpIcon from 'material-ui-icons/HelpOutline';
 
 
-const styles = {
-  button: {
-    float: 'right'
-  },
-  stepper: {
-    backgroundColor: 'transparent'
-  }
-};
+const styles = {};
 
 const fieldMap = {
   aerospace: 'Aerospace Engineering',
@@ -29,7 +22,7 @@ const fieldMap = {
 const Help = ({ onNext, field, open, classes }) => {
   const fieldName = fieldMap[field];
   return (
-    <Dialog open={true}>
+    <Dialog open={true} className={classes.dialog} maxWidth={'md'}>
       <DialogTitle>
         Task
       </DialogTitle>
@@ -39,7 +32,7 @@ const Help = ({ onNext, field, open, classes }) => {
           You will be presented with phrases that were automatically extracted from {fieldName}-related
           discussion posts on Reddit. You are asked to specify for these phrases whether they
           represent <strong>irrelevant</strong>, <strong>marginally relevant</strong>,&nbsp;
-          <strong>relevant</strong> or <strong>highly relevant</strong> concepts within the field of&nbsp;
+          <strong>relevant</strong>, or <strong>highly relevant</strong> concepts within the field of&nbsp;
           {fieldName}. All phrases have been transformed to lower case, and classification should
           therefore be performed in a non-case-senstivie manner.
         </Typography>
@@ -50,11 +43,11 @@ const Help = ({ onNext, field, open, classes }) => {
         <Typography type="caption">
           For example, one or more of the following statements about the phrase is true.
         </Typography>
-        <Typography paragraph>
+        <Typography>
           <ul>
-            <li>The phrase is not a meaningful concept. </li>
+            <li>The phrase does not denote any meaningful concept. </li>
             <li>The phrase does not denote a concept within {fieldName} or any related field. </li>
-            <li>The phrase does only partially denote a meaningful concept within {fieldName} or a related field. </li>
+            <li>The phrase only contains part of the name of a concept. </li>
           </ul>
         </Typography>
 
@@ -64,9 +57,9 @@ const Help = ({ onNext, field, open, classes }) => {
         <Typography type="caption">
           For example, one or more of the following statements about the phrase is true.
         </Typography>
-        <Typography paragraph>
+        <Typography>
           <ul>
-            <li>The phrase denotes a concept within a related field of {fieldName}. </li>
+            <li>The phrase denotes a concept within a related field of {fieldName}, but not within {fieldName} itself. </li>
             <li>The phrase denotes a concept that is sometimes used in relation to a concept within {fieldName}. </li>
             <li>The phrase denotes a concept that is used to derive a concept within {fieldName}. </li>
           </ul>
@@ -78,12 +71,12 @@ const Help = ({ onNext, field, open, classes }) => {
         <Typography type="caption">
           For example, one or more of the following statements about the phrase is true.
         </Typography>
-        <Typography paragraph>
+        <Typography>
           <ul>
             <li>The phrase denotes a concept within {fieldName}. </li>
-            <li>The phrase probably present in master level of formal education into {fieldName}. </li>
-            <li>The phrase denotes a topic that is discussed from time to time within {fieldName}. </li>
             <li>The phrase denotes a concept on which some other concepts within {fieldName} build. </li>
+            <li>The phrase denotes a topic that is presented in the Master level of formal education into {fieldName}. </li>
+            <li>The phrase denotes a topic that is discussed from time to time within {fieldName}. </li>
           </ul>
         </Typography>
 
@@ -93,13 +86,17 @@ const Help = ({ onNext, field, open, classes }) => {
         <Typography type="caption">
           For example, one or more of the following statements about the phrase is true.
         </Typography>
-        <Typography paragraph>
+        <Typography>
           <ul>
             <li>The phrase denotes a seminal concept within {fieldName}. </li>
-            <li>The phrase denotes a topic that is presented in the bachelor level of formal education into {fieldName}.  </li>
-            <li>The phrase denotes a topic that is often discussed within {fieldName}. </li>
             <li>The phrase denotes a concept on which many other concepts within {fieldName} build. </li>
+            <li>The phrase denotes a topic that is presented in Bachelor level of formal education into {fieldName}. </li>
+            <li>The phrase denotes a topic that is often discussed within {fieldName}. </li>
           </ul>
+        </Typography>
+
+        <Typography type="body1" paragraph>
+          <strong>Note:</strong> please look up a phrase if you do not recognize it (for example, on Google or on Wikipedia), and be aware that phrases may also be acronyms. If you cannot find the phrase within a short amount of time, please mark it as irrelevant.
         </Typography>
 
         <Typography type="body1" paragraph>
@@ -109,7 +106,7 @@ const Help = ({ onNext, field, open, classes }) => {
 
       <DialogActions>
         <Button dense color="primary" onClick={onNext}>
-          Close
+          Continue
         </Button>
       </DialogActions>
     </Dialog>
